@@ -73,6 +73,7 @@
 		height :32px;
 		background :green;
 		}
+
 		#discharge{
 		height :32px;
 		background :red;
@@ -131,6 +132,7 @@
                document.getElementById('charging-time').innerHTML = battery.chargingTime;
                document.getElementById('discharging-time').innerHTML = battery.dischargingTime;
                document.getElementById('battery-level').innerHTML = battery.level;
+
 		if (battery.charging)
 		{
 		document.getElementById('charge').style.background = "GREEN";
@@ -141,6 +143,7 @@
 		document.getElementById('charge').style.background = "red";
 		document.getElementById('charge').style.width = battery.level*100 +"px";	
 		}
+
             }
 
             function addEvents(battery) {
