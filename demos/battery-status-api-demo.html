@@ -61,21 +61,22 @@
             display: block;
             margin-top: 1em;
          }
-	 #battary
-	{
-		width : 100px;
-		height : 30px;
-		background : black;
-		border:1px red solid;
-		
-	}
-	#charge
-	{
-	
-	height : 28px;
-	background : green;
-		
-	}
+
+		 #battery{
+		width :100px;
+		height:35px;
+		background:black;
+		border :1px red solid;
+		}
+
+		#charge{
+		height :32px;
+		background :green;
+		}
+		#discharge{
+		height :32px;
+		background :red;
+		}
       </style>
    </head>
    <body>
@@ -96,13 +97,18 @@
             </ul>
          </div>
       </div>
-	<div id = "battary">
-	<div id = "charge" >
-	</div>
-	</div>
+
+	  <div id="battery">
+	  <div id="charge">
+
+	  </div>
+
+	  </div>
+
       <h3>Log</h3>
       <div id="log"></div>
       <button id="clear-log" class="button-demo">Clear log</button>
+
 
       <small class="author">
          Demo created by <a href="http://www.audero.it">Aurelio De Rosa</a>
@@ -125,8 +131,16 @@
                document.getElementById('charging-time').innerHTML = battery.chargingTime;
                document.getElementById('discharging-time').innerHTML = battery.dischargingTime;
                document.getElementById('battery-level').innerHTML = battery.level;
-		document.getElementById('charge').style.width = battery.level *100+"px" ;
-		
+		if (battery.charging)
+		{
+		document.getElementById('charge').style.background = "GREEN";
+		document.getElementById('charge').style.width = battery.level*100 +"px";
+		}
+		else 
+		{
+		document.getElementById('charge').style.background = "red";
+		document.getElementById('charge').style.width = battery.level*100 +"px";	
+		}
             }
 
             function addEvents(battery) {
